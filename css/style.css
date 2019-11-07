@@ -1,0 +1,216 @@
+.topo{
+    border: #c6c8ca 1px solid;
+}
+.coll{
+    background-color: tomato;
+}
+.banner{
+    width: 450px;
+}
+.btnTop{
+    height: 60px;
+    width: 150px;
+}
+.info{
+    height: 60px;
+}
+body{
+    font-family: Arial;
+}
+li {
+    background-color: #80bdff;
+    padding: 10px;
+    color: white;
+    font-size: 15px;
+    margin-top: 5px;
+    text-decoration: none;
+    cursor: pointer;
+}
+.valoresr{
+
+    padding: 15px;
+    width: 170px;
+    background-color: #7dfc7e;
+    align-items: center;
+    margin: 10px;
+    border-radius: 10px;
+    color: white;
+    font-size: 18px;
+}
+.valoresd{
+    padding: 15px;
+    width: 150px;
+    background-color: #fc6e7d;
+    margin: 10px;
+    border-radius: 10px;
+    color: white;
+}
+.espasamento{
+    margin-top: 10px;
+}
+.espasamento2{
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+.espasamento3{
+    margin-top: 30px;
+ }
+.tabela{
+    height: 350px;
+}
+}
+.botao{
+    height: 60px;
+    width: 80px;
+}
+.titulo{
+    color: #007bff;
+
+}
+.teste{
+    display: none;
+}
+.login{
+    background-color: #80bdff;
+    height: 45px;
+    margin-right: 5px;
+}
+.formdrop{
+    width: 90%;
+    margin-left: 4px;
+    margin-right: 4px;
+}
+
+.dropdown-menu{
+    animation-duration: 350ms;
+    animation-name: fade;
+    overflow: hidden;
+}
+
+.baner{
+    margin-top: 10px;
+    height: 500px;
+    background-image:url('../images/baner.jpg');
+    background-position:center;
+    background-size:cover;
+
+}
+.banertitulo{
+    margin-top: 5px;
+}
+.menu1{
+    background-color: #00a8ff;
+    height: 200px;
+    color: white;
+    font-size: 15px;
+    border-top-left-radius: 10px;
+}
+.menu2{
+    background-color: #487eb0;
+    height: 200px;
+    color: white;
+    font-size: 15px;
+}
+.menu3{
+    background-color: #0097ef;
+    height: 200px;
+    color: white;
+    font-size: 15px;
+    border-top-right-radius: 10px;
+}
+.corpo{
+    margin-top: 20px;
+}
+.icones{
+    height: 100px;
+    width: 100px;
+}
+.footertext{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: #484848;
+    height: 200px;
+    color: white;
+}
+.fale{
+   margin-top: 100px;
+
+}
+.formg{
+    width: 300px;
+}
+footer{
+    background-color: #007bff;
+    color: white;
+}
+.contato{
+    margin-top: 15px;
+    margin-left: 15px;
+}
+@media (max-width:760px){
+
+    .teste{
+        display: block;
+    }
+    .ocultar{
+        display: none;
+    }
+    .baner{
+        background-image: none;
+    }
+    .menu3{
+        border-radius: 0px;
+    }
+
+
+}
+
+@media (max-width:575px){
+    .corpo{
+        margin-top: 120px;
+    }
+    .menu1{
+        border-top-right-radius: 10px;
+    }
+
+}
+@media (max-width:440px){
+    .logo{
+        width: 100px;
+    }
+    .logo2{
+        width: 240px;
+    }
+
+
+}
+
+@media (max-width:330px){
+    .logo{
+        width: 80px;
+    }
+    .logo2{
+        width: 160px;
+    }
+
+}
+@keyframes fade {
+  from{
+      opacity: 0;
+
+      transform: scale(0.6);
+      transform: translateX(15px);
+      transform: translateY(100%);
+      transform: translateZ(100%);
+
+
+
+  }
+  to{
+      opacity: 1;
+      transform: scale(1);
+      transform: translateX(0);
+      transform: translateY(0);
+      transform: translateZ(0);
+  }
+}
