@@ -6,12 +6,7 @@ $motoboy = new motoboy();
 $id_usuario = $_SESSION['login'];
 
 $data = date("Y-m-d");
-$valor = $motoboy->getvalor($id_usuario,$data);
 
-$valorR = $valor['receita'];
-$valorD = $valor['debito'];
-$valor2 = $valorR - $valorD;
-$motoboy->setliquido($id_usuario,$data, $valor2);
 
 $valor = $motoboy->getvalor($id_usuario,$data);
 $valorR = $valor['receita'];

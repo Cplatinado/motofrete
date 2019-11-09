@@ -63,9 +63,9 @@ $R30l = $motoboy->realatorio30L($id_usuario);
 
             # fericicando data do campo de ganho e puxando os valores do db
             if(isset($datai) && !empty($datai)){
-                $verificar = $motoboy->verificardata($datai);
+                $verificar = $motoboy->verificardata($datai,$id_usuario);
                 if($verificar == false){?>
-                     <div class="alert alert-warning">insisara uma data valida</div>
+                     <div class="alert alert-warning">insira uma data valida</div>
             <?php
                 }else{
                     $relatorio = $motoboy->somarganhos($id_usuario,$datai,$dataf); ?>
@@ -77,9 +77,9 @@ $R30l = $motoboy->realatorio30L($id_usuario);
 
             #ferificando as dadas do campo de gastos e puxando os valores do db
             if(isset($dataig) && !empty($dataig)){
-                $verificar = $motoboy->verificardata($dataig);
+                $verificar = $motoboy->verificardata($dataig,$id_usuario);
                 if($verificar == false){?>
-                    <div class="alert alert-warning">insisara uma data valida</div>
+                    <div class="alert alert-warning">insira uma data valida</div>
             <?php
                 }else{
                     $relatorio = $motoboy->somardebitos($id_usuario,$dataig, $datafg); ?>
@@ -93,9 +93,9 @@ $R30l = $motoboy->realatorio30L($id_usuario);
 
             #ferificando as datas do compo de liquido e puxando os valores do db
             if(isset($datail) && !empty($datail)){
-                $verificar = $motoboy->verificardata($datail);
+                $verificar = $motoboy->verificardata($datail,$id_usuario);
                 if($verificar == false){?>
-                    <div class="alert alert-warning">insisara uma data valida</div>
+                    <div class="alert alert-warning">insira uma data valida</div>
                     <?php
                 }else{
                     $relatorio = $motoboy->somarliquido($id_usuario,$datail, $datafl); ?>

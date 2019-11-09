@@ -36,7 +36,7 @@ class motoboy{
 
     public function addreceita($id_usuario, $data, $receita){
 
-        if ($this->verificardata($data) == false){
+        if ($this->verificardata($data,$id_usuario) == false){
 
             $sql = "INSERT INTO info SET  id_usuario  = :idusuario, data = :data, receita = :receita ";
             $sql = $this->pdo->prepare($sql);
@@ -54,10 +54,11 @@ class motoboy{
             $valordb = $valordb['receita'] + $receita;
 
 
-            $sql = "UPDATE info SET receita = :valor WHERE data = :data";
+            $sql = "UPDATE info SET receita = :valor WHERE data = :data and id_usuario = :id_usuario";
             $sql = $this->pdo->prepare($sql);
             $sql->bindValue(":valor", $valordb);
             $sql->bindValue(":data", $data);
+            $sql->bindValue(":id_usuario", $id_usuario);
             $sql->execute();
 
             return true;
@@ -145,7 +146,7 @@ class motoboy{
 
     public function adddebito($id_usuario, $data, $debito){
 
-        if ($this->verificardata($data) == false){
+        if ($this->verificardata($data,$id_usuario) == false){
 
             $sql = "INSERT INTO info SET  id_usuario  = :idusuario, data = :data, debito = :receita ";
             $sql = $this->pdo->prepare($sql);
@@ -163,10 +164,11 @@ class motoboy{
             $valordb = $valordb['debito'] + $debito;
 
 
-            $sql = "UPDATE info SET debito = :valor WHERE data = :data";
+            $sql = "UPDATE info SET debito = :valor WHERE data = :data and id_usuario = :id_usuario ";
             $sql = $this->pdo->prepare($sql);
             $sql->bindValue(":valor", $valordb);
             $sql->bindValue(":data", $data);
+            $sql->bindValue(":id_usuario", $id_usuario);
             $sql->execute();
 
             return true;
@@ -180,13 +182,13 @@ class motoboy{
 
         if(isset($valor2) && !empty($valor2)){
 
-            if ($this->verificardata($data) == false){
+            if ($this->verificardata($data,$id_usuario) == false){
 
-                $sql = "INSERT INTO info SET  id_usuario  = :idusuario, data = :data, liquido = :valor ";
+                $sql = "INSERT INTO info SET  id_usuario  = :id_usuario, data = :data, liquido = :valor ";
                 $sql = $this->pdo->prepare($sql);
-                $sql->bindValue(":idusuario", $id_usuario);
+                $sql->bindValue(":id_usuario", $id_usuario);
                 $sql->bindValue(":data", $data);
-                $sql->bindValue(":liquido", $valor2);
+                $sql->bindValue(":valor", $valor2);
                 $sql->execute();
 
 
@@ -194,10 +196,11 @@ class motoboy{
 
             }else{
 
-                $sql = "UPDATE info SET liquido = :valor WHERE data = :data";
+                $sql = "UPDATE info SET liquido = :valor WHERE data = :data and  id_usuario = :id_usuario";
                 $sql = $this->pdo->prepare($sql);
-                $sql->bindValue(":valor", $valor2);
+                $sql->bindValue(":id_usuario", $id_usuario);
                 $sql->bindValue(":data", $data);
+                $sql->bindValue(":valor", $valor2);
                 $sql->execute();
 
                 return true;
@@ -289,10 +292,12 @@ class motoboy{
     }
 
 
-    public function verificardata($data){
-        $sql= "SELECT * FROM info WHERE data = :data";
+    public function verificardata($data,$id_usuario){
+        $sql= "SELECT * FROM info WHERE data = :data and id_usuario = :id_usuario";
         $sql = $this->pdo->prepare($sql);
         $sql->bindValue(":data", $data);
+        $sql->bindValue(":id_usuario", $id_usuario);
+
         $sql->execute();
         if ( $sql->rowCount() > 0){
 

@@ -3,7 +3,7 @@
     <input type="date" name="dataf">
     <input type="submit" value="enviar">
 </form>
-
+<a href="teste.php?id=4">123</a>
 <?php
 require_once  "classes/motoboy.class.php";
 $data = date("Y-m-d");
@@ -15,9 +15,11 @@ $dataf = $_POST['dataf'];
 echo  $datai."  ".$dataf."  ";
 $receita = 8;
 $idusuario = 39;
-$teste = $motoboy->getTdbairro();
 
-echo $teste['valor'];
+$receita = number_format($receita, 2,",", " ");
+echo $receita;
+
+
 
 /*
 $valordb  = $motoboy->getvalor($idusuario, $data);
